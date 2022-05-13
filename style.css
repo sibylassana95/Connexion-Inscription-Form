@@ -1,0 +1,187 @@
+html, body {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f6f5f7;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+}
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 800px;
+    height: 500px;
+    text-align: center;
+    padding-bottom: 13rem;
+}
+
+.container-sign {
+    width: 100%;
+    height: 100%;
+    background: rgba(134, 255, 123, 0.685);
+    border-radius: 10px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, .4);
+    position: relative;
+    transition: 300ms;
+}
+.signin-signup {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.sign-in, .sign-up {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 0;
+    transition: 300ms;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0; 
+ }
+.sign-in {
+    z-index: 1; 
+}
+.sign-up {
+    z-index: -1;
+}
+
+.sign-in h2, .sign-up h2 {
+    font-size: 2.2em;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+form a {
+    display: block;
+    text-decoration: none;
+    color: #57575a;
+    margin: 15px;
+    font-size: .9em;
+}
+
+form input {
+    border: none;
+    font-size: 12px;
+    padding: 8px;
+    margin: 8px 0;
+    background: #e8e8e9;
+    width: 70%;
+}
+
+form button {
+    background: linear-gradient(to right, #FF4B2B, #FF416C);
+    color: white;
+    padding: 12px 40px;
+    border: 1px solid transparent;
+    border-radius: 26px;
+    font-size: .9em;
+    text-transform: uppercase;
+    margin-top: 16px;
+    outline: none;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+form button:active{
+    transform: scale(.9);
+}
+
+.mark {
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   text-align: center;
+   display: flex;
+   flex: 1 1 0;
+   top: 0;
+}
+.mark p {
+    padding: 0 50px;
+}
+
+.mark-sign-in, .mark-sign-up {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.mark button {
+    background: transparent;
+    color: white;
+    padding: 12px 40px;
+    border: 1px solid white;
+    border-radius: 26px;
+    font-size: .9em;
+    text-transform: uppercase;
+    margin-top: 16px;
+    outline: none;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.mark button:active {
+    transform: scale(.9);
+}
+
+.mark-sign-in {
+    z-index: -1;
+}
+
+.mark-sign-up {
+    z-index: 3;
+}
+
+.container-sign::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: hwb(239 38% 9% / 0.342);
+    z-index: 2;
+    transition: 300ms;
+    border-radius: 0 10px 10px 0;
+}
+
+.container-sign.active::after {
+    transform: translateX(-400px);
+    border-radius: 10px 0 0 10px;
+}
+
+.container-sign.active .sign-in {
+    z-index: -1;
+    transform: translateX(400px);
+}
+.container-sign.active .sign-up {
+    transform: translateX(400px);
+    z-index: 1;
+}
+
+.mark.active .mark-sign-in {
+    z-index: 3;
+}
+.mark.active .mark-sign-up {
+    z-index: -1;
+}
